@@ -1,0 +1,15 @@
+@import '/init.css';
+
+#link {
+    display: inline-block;
+    color: var(--link);
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: background-color .2s ease-out;
+    outline: none;
+}
+
+#link:hover,
+#link:focus {
+    background-color: var(--link-overlay);
+}

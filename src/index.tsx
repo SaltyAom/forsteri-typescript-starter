@@ -1,5 +1,9 @@
 import { registerComponent } from "forsteri"
 
-import { view, state } from "./view"
+import { Title, props as TitleProps } from "./title"
+import { Detail } from "./detail"
+import { Link, props as LinkProps } from "./link"
 
-registerComponent("forsteri-element", view, state)
+registerComponent("app-title", Title, {}, TitleProps)
+registerComponent("app-detail", Detail)
+registerComponent("app-link", Link, {}, LinkProps)
