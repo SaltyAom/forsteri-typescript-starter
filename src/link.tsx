@@ -19,7 +19,7 @@ export const props = ["href", "standalone"],
                             font-size: 21px;
                         }
                     `}</style>
-                    <a id="link" href={href}>
+                    <a id="link" href={href} part="link">
                         <children />
                     </a>
                 </fragment>

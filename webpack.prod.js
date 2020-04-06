@@ -7,7 +7,8 @@ module.exports = {
     entry: ["./index.tsx"],
     output: {
         path: join(__dirname, "dist"),
-        filename: "[name].bundle.js"
+        filename: "bundle.js",
+        chunkFilename: '[name].bundle.js',
     },
     resolve: {
         extensions: [".tsx", ".ts", ".js"]
@@ -31,11 +32,23 @@ module.exports = {
         minimize: true,
         minimizer: [new TerserPlugin()],
         splitChunks: {
+            chunks: "all",
+            minSize: 30000,
+            maxSize: 0,
+            minChunks: 128,
+            maxAsyncRequests: 6,
+            maxInitialRequests: 4,
+            automaticNameDelimiter: "~",
+            name: true,
             cacheGroups: {
-                commons: {
+                defaultVendors: {
                     test: /[\\/]node_modules[\\/]/,
-                    name: "vendors",
-                    chunks: "all"
+                    priority: -10
+                },
+                default: {
+                    minChunks: 2,
+                    priority: -20,
+                    reuseExistingChunk: true
                 }
             }
         }
