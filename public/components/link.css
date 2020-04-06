@@ -1,4 +1,6 @@
-@import '/init.css';
+:host {
+    display: inline-block;
+}
 
 #link {
     display: inline-block;
