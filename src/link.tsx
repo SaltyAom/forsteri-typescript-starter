@@ -26,12 +26,12 @@ export const props = ["href", "standalone"],
             )
 
         return (
-            <section>
+            <fragment>
                 <link rel="stylesheet" href="/components/link.css" />
                 <a id="link" href={href}>
                     <children />
                 </a>
-            </section>
+            </fragment>
         )
     }
 
