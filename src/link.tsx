@@ -8,7 +8,7 @@ export const props = ["title", "href", "standalone"],
         if(standalone)
             return (
                 <section>
-                    <link rel="stylesheet" href="/components/init.css" />
+                    <link rel="stylesheet" href="/init.css" />
                     <link rel="stylesheet" href="/components/link.css" />
                     <style>{`
                         #link { 
