@@ -7,6 +7,7 @@ export const props = ["title"],
     ) => {
         return (
             <header>
+                <link rel="stylesheet" href="/components/init.css" />
                 <link rel="stylesheet" href="/components/title.css" />
                 <h1 id="title">{title}</h1>
             </header>
