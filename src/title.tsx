@@ -1,4 +1,4 @@
-import { createElement, ForsteriComponent } from "forsteri"
+import { h, ForsteriComponent } from "forsteri"
 
 export const props = ["title"],
     Title: ForsteriComponent<{}, typeof props> = (
@@ -6,11 +6,11 @@ export const props = ["title"],
         { title = "Forsteri" }
     ) => {
         return (
-            <header>
+            <fragment>
                 <link rel="stylesheet" href="/init.css" />
                 <link rel="stylesheet" href="/components/title.css" />
                 <h1 id="title">{title}</h1>
-            </header>
+            </fragment>
         )
     }
 

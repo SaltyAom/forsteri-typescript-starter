@@ -1,17 +1,17 @@
 {
-    "presets": [["env", { "modules": false }], "react"],
+    "presets": [["env", { "modules": true }]],
     "plugins": [
         [
             "babel-plugin-transform-react-jsx",
             {
-                "pragma": "createElement"
+                "pragma": "h"
             }
         ],
         [
             "babel-plugin-jsx-pragmatic",
             {
                 "module": "forsteri/pragma",
-                "import": "createElement"
+                "import": "h"
             }
         ]
     ]

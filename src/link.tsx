@@ -1,32 +1,35 @@
-import { createElement, ForsteriComponent } from "forsteri"
+import { h, ForsteriComponent } from "forsteri"
 
-export const props = ["title", "href", "standalone"],
+export const props = ["href", "standalone"],
     Link: ForsteriComponent<{}, typeof props> = (
         _,
-        { title = "", href = "/", standalone = false }
+        { href = "/", standalone = false }
     ) => {
-        if(standalone)
+        if (standalone)
             return (
-                <section>
+                <fragment>
                     <link rel="stylesheet" href="/init.css" />
                     <link rel="stylesheet" href="/components/link.css" />
                     <style>{`
+                        :host {
+                            margin: 60px auto 0 auto;
+                        }
+
                         #link { 
                             font-size: 21px;
-                            margin: 60px 0 0 0;
                         }
                     `}</style>
                     <a id="link" href={href}>
-                        {title}
+                        <children />
                     </a>
-                </section>
+                </fragment>
             )
 
         return (
             <section>
                 <link rel="stylesheet" href="/components/link.css" />
                 <a id="link" href={href}>
-                    {title}
+                    <children />
                 </a>
             </section>
         )

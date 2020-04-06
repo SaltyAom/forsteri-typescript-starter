@@ -1,14 +1,14 @@
-import { createElement, ForsteriComponent } from "forsteri"
+import { h, ForsteriComponent } from "forsteri"
 
 export const Detail: ForsteriComponent = () => (
-    <section>
+    <fragment>
         <link rel="stylesheet" href="/init.css" />
         <link rel="stylesheet" href="/components/detail.css" />
         <p id="detail">
             Glad to see you~ To get started, edit{" "}
-            <app-link title="src/index.tsx" link="/"></app-link>, save and reload.
+            <app-link link="/">src/index.tsx</app-link>, save and reload.
         </p>
-    </section>
+    </fragment>
 )
 
 export default Detail
