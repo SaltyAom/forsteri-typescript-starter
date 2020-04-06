@@ -6,7 +6,7 @@ export const Detail: ForsteriComponent = () => (
         <link rel="stylesheet" href="/components/detail.css" />
         <p id="detail">
             Glad to see you~ To get started, edit{" "}
-            <app-link link="/">src/index.tsx</app-link>, save and reload.
+            <app-link href="/">src/index.tsx</app-link>, save and reload.
         </p>
     </fragment>
 )
