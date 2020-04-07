@@ -2,7 +2,7 @@ import { h, ForsteriComponent } from "forsteri"
 
 export const props = ["title"],
     Title: ForsteriComponent<{}, typeof props> = (
-        state,
+        { set },
         { title = "Forsteri" }
     ) => {
         return (
