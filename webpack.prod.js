@@ -1,14 +1,15 @@
 const { join } = require("path"),
+    webpack = require("webpack"),
     TerserPlugin = require("terser-webpack-plugin")
 
 module.exports = {
     mode: "production",
     context: join(__dirname, "src"),
     entry: ["./index.tsx"],
+    plugins: [new webpack.HashedModuleIdsPlugin()],
     output: {
         path: join(__dirname, "dist"),
-        filename: "bundle.js",
-        chunkFilename: '[name].bundle.js',
+        filename: "main.js"
     },
     resolve: {
         extensions: [".tsx", ".ts", ".js"]
@@ -30,27 +31,6 @@ module.exports = {
     },
     optimization: {
         minimize: true,
-        minimizer: [new TerserPlugin()],
-        splitChunks: {
-            chunks: "all",
-            minSize: 30000,
-            maxSize: 0,
-            minChunks: 128,
-            maxAsyncRequests: 6,
-            maxInitialRequests: 4,
-            automaticNameDelimiter: "~",
-            name: true,
-            cacheGroups: {
-                defaultVendors: {
-                    test: /[\\/]node_modules[\\/]/,
-                    priority: -10
-                },
-                default: {
-                    minChunks: 2,
-                    priority: -20,
-                    reuseExistingChunk: true
-                }
-            }
-        }
+        minimizer: [new TerserPlugin()]
     }
 }

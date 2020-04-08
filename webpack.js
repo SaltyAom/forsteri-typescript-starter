@@ -7,7 +7,7 @@ module.exports = {
     entry: ["webpack-hot-middleware/client", "./index.tsx"],
     output: {
         path: join(__dirname, "public"),
-        filename: "bundle.js",
+        filename: "main.js",
         publicPath: "public"
     },
     resolve: {

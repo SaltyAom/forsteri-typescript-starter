@@ -6,7 +6,9 @@
     "scripts": {
         "dev": "node server.js",
         "build": "yarn pre-build && webpack --config webpack.prod.js",
-        "pre-build": "rm -rf dist && cp -r public dist"
+        "pre-build": "rm -rf dist && cp -r public dist",
+        "build:component": "yarn pre-build:component && webpack --config webpack.component.js",
+        "pre-build:component": "rm -rf component"
     },
     "keywords": [
         "minimal",
@@ -20,7 +22,7 @@
         "url": "git://github.com/SaltyAom/forsteri-starter.git"
     },
     "dependencies": {
-        "forsteri": "^0.1.0"
+        "forsteri": "^0.2.7"
     },
     "devDependencies": {
         "@types/webpack-env": "^1.15.1",
