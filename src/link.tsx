@@ -5,12 +5,13 @@ export const props = ["href", "standalone"],
         _,
         { href = "/", standalone = false }
     ) => {
-        if (standalone)
-            return (
-                <fragment>
-                    <link rel="stylesheet" href="/init.css" />
-                    <link rel="stylesheet" href="/components/link.css" />
-                    <style>{`
+        return (
+            <fragment>
+                <link rel="stylesheet" href="/components/link.css" />
+                {standalone ? (
+                    <fragment>
+                        <link rel="stylesheet" href="/components/link.css" />
+                        <style>{`
                         :host {
                             margin: 60px auto 0 auto;
                         }
@@ -19,15 +20,10 @@ export const props = ["href", "standalone"],
                             font-size: 21px;
                         }
                     `}</style>
-                    <a id="link" href={href} part="link">
-                        <children />
-                    </a>
-                </fragment>
-            )
-
-        return (
-            <fragment>
-                <link rel="stylesheet" href="/components/link.css" />
+                    </fragment>
+                ) : (
+                    <fragment />
+                )}
                 <a id="link" href={href}>
                     <children />
                 </a>
