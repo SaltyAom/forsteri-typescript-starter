@@ -24,6 +24,6 @@
         "forsteri": "^0.2.12"
     },
     "devDependencies": {
-        "forsteri-cli": "^0.1.0"
+        "forsteri-cli": "^0.1.1"
     }
 }
